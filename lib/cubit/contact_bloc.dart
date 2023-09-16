@@ -12,14 +12,16 @@ part 'contact_state.dart';
 
 class ContactBloc extends Bloc<ContactEvent, ContactState> {
    final ViewContacts viewContacts;
+   List <User> mydata = [];
   ContactBloc({required this.viewContacts}): super(ContactLoading()){
 on<GetData> ((event,emit) async { //Defining a GetData event handler.
   emit(ContactLoading()); // Emitting the ContactLoading state to indicate data loading.
   await Future.delayed(Duration(seconds: 1));
   try
       {
-        final data = await viewContacts.fetchData();
-        emit(ContactLoaded(data));
+        mydata = await viewContacts.fetchData();
+        //final data = await viewContacts.fetchData();
+        emit(ContactLoaded(mydata));
       } catch (e) {
     emit(ContactError(e.toString())); // Handling errors by emitting ContactError state with an error message.
       }

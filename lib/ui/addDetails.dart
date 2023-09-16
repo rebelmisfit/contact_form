@@ -3,13 +3,13 @@ import 'package:contact_form/main.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:contact_form/constants.dart';
+import 'package:contact_form/Utils/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../cubit/contact_bloc.dart';
-import '../utils.dart';
+import '../Utils/utils.dart';
 
 
 
